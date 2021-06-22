@@ -1,0 +1,10 @@
+{
+  "TUMORES CEREBRAIS": {
+    "inclusion": "gbm\nglial\nglioblast\nglioma\nmetast\nneoplasi\nsecund\ntumor",
+    "exclusion": "CID\nanteced\nfalha de enchi\nhipof\nhistoria\nindicacao clinica\nmama\nmediast\nmetabol\nnao\npseudotu\nrenal\ntireoide"
+  },
+  "HCC": {
+    "inclusion": "CHC\nHCC\nhepatocarcinoma",
+    "exclusion": "Ausencia\nNao ha lesoes suspeitas\nNao se caracterizam \nRASTREAMENTO"
+  }
+}
