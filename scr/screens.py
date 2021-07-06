@@ -8,8 +8,10 @@ def main_screen(filter_set):
     file_list_column = [
         [
             sg.Text("CSV Dataset", font=bold),
-            sg.InputText(size=(60, 1), enable_events=True, key="-CSV FILENAME-"),
-            sg.FilesBrowse(file_types=(("CSV Files", "*.csv"),), key="-OPEN CSV FILE-")
+            sg.InputText(size=(45, 1), enable_events=True, key="-CSV FILENAME-"),
+            sg.FilesBrowse(file_types=(("CSV Files", "*.csv"),), key="-OPEN CSV FILE-"),
+            sg.Checkbox("Remove SW", default=False, key="-STOPWORDS-",
+                        tooltip="Remove StopWords. This process can take some time.")
         ],
         [
             sg.Text("Select Filter", font=bold),

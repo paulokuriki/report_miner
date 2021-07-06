@@ -22,13 +22,13 @@ WHERE DATE(exam_datetime) BETWEEN "2021-01-01" AND "2021-06-18"
 '''
 
 
-def open_csv(report_file):
+def open_csv(report_file: str, remove_stopwords: bool):
     stopwords = nltk.corpus.stopwords.words('portuguese')
     include_stopwords = ['com', 'sem']
     stopwords = [word for word in stopwords if not word in include_stopwords]
 
     try:
-        df = pd.read_csv(report_file, delimiter=',')
+        df = pd.read_csv(report_file, delimiter=',', dtype=str)
     except Exception as e:
         return None
 
@@ -45,7 +45,11 @@ def open_csv(report_file):
         # cria uma coluna com os laudos tokenizados.
         # essa funcao pode demorar alguns segundos para processar....
         campo_laudo = 'laudo_txt'
-        df['laudo_tokenizado'] = df.apply(lambda row: remove_stopwords(row[campo_laudo]), axis=1)
+
+        if remove_stopwords:
+            df['laudo_tokenizado'] = df.apply(lambda row: remove_stopwords(row[campo_laudo]), axis=1)
+        else:
+            df['laudo_tokenizado'] = df[campo_laudo]
     except Exception as e:
         sg.Popup(f"Erro ao tentar abrir dataset.\n{e}")
         return None
@@ -252,6 +256,7 @@ def delete_filter_set(filter):
         except:
             pass
 
+
 def load_keys_filter_set():
     try:
         with open(filter_filename, 'r') as f:
@@ -295,13 +300,14 @@ while True:
         if os.path.isfile(report_file):
             if sg.PopupOKCancel(
                     f"\nAbrindo dataset {report_file}\n\nAguarde. Este processo pode levar alguns segundos.\n") == "OK":
-                df = open_csv(values['-CSV FILENAME-'])
+                df = open_csv(values['-CSV FILENAME-'], values['-STOPWORDS-'])
                 if df is not None:
                     novo_nome_arq, _ = os.path.splitext(report_file)
                     novo_nome_arq += "_NEW.csv"
                     window['-EXPORT FILENAME-'].update(novo_nome_arq)
                     sg.Popup(
-                        "\nCSV file loaded successfully.\n\nNow, define inclusion and exclusion words and click Process.\n",
+                        "\nCSV file loaded successfully.\n\n"
+                        "Now, define inclusion and exclusion words and click Process.\n",
                         title=screen_title)
 
     elif event == "-PROCESS-":

@@ -1,10 +1,6 @@
 {
-  "TUMORES CEREBRAIS": {
-    "inclusion": "gbm\nglial\nglioblast\nglioma\nmetast\nneoplasi\nsecund\ntumor",
-    "exclusion": "CID\nanteced\nfalha de enchi\nhipof\nhistoria\nindicacao clinica\nmama\nmediast\nmetabol\nnao\npseudotu\nrenal\ntireoide"
-  },
-  "HCC": {
-    "inclusion": "CHC\nHCC\nhepatocarcinoma",
-    "exclusion": "Ausencia\nNao ha lesoes suspeitas\nNao se caracterizam \nRASTREAMENTO"
+  "fx tc coluna cervical": {
+    "inclusion": "cominutiv\ndesconti\nfratura\nsolucao de conti\ntraco",
+    "exclusion": "?\nAusencia de frat\nAusencia de sina\nAusencia de sinais\nAusencia de tracos de frat\nAusencias de fratu\nD1\nD10\nD11\nD12\nD2\nD3\nD4\nD5\nD6\nD7\nD8\nD9\nL1\nL2\nL3\nL4\nL5\nNao caracterizamos\nNao evidenciamos\nNao foi identificad\nNao foram evidenciad\nNao foram identificad\nNao foram observad\nNao ha evidencia\nNao ha frat\nNao ha sinais\nNao ha traco\nNao houve a caracterizacao\nNao identifica\nNao observamos \nNao se caracterizam\nNao se evidenciam\nNao se identific\nNao se observa\nNao se observam \nNao sinais de fra\nSuspeita\nT1\nT10\nT11\nT12\nT2\nT3\nT4\nT5\nT6\nT7\nT8\nT9\naletracoes\nantiga\narco cost\narcos cost\ncocci\nconsolid\ncontrole\ncostela\nfistula liquo\nindicacao clinica:\nindicacao:\ninvestigacao\nnao ha sina\nnao ha sinais de frat\nnao se observando\nnao se observando frat\nnasais\nnasal\nparafusos\npesquisa\nrefere\nsacra\nsacro\nseio\nsem desconti\nsem evidencia de frat\nsem evidencias de frat\nsem evidencias de tracos de frat\nsem frat\nsem indicio\nsem sinais de erosoes ou frat\nsem sinais de frat\nsem sinais de linha de frat\nsem sinais evidentes de frat\nsem sinas\nsem tracos de frat\nsequela\nsoltura"
   }
 }

@@ -1,1 +1,1 @@
-venv\scripts\pyinstaller.exe --windowed report_miner\report_miner.py
+venv\scripts\pyinstaller.exe --windowed scr\report_miner.py
